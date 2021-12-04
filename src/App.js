@@ -8,6 +8,9 @@ import { Content } from './components/content';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Add } from './components/add';
+import { View } from './components/view';
+import { Update } from './components/update';
 
 //app class that inherits from components
 
@@ -27,17 +30,18 @@ class App extends Component {
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/read">Read</Nav.Link>
-              <Nav.Link href="/create">Create</Nav.Link>
+              <Nav.Link href="/view">View</Nav.Link>
+              <Nav.Link href="/add">Add</Nav.Link>
             </Nav>
           </Navbar>
           <br />
 
            {/* //switch statment evaluates an expression */}
           <Switch>
-            <Route path='/' component={Content} exact />
-            <Route path='/create' component={Header} exact />
-            <Route path='/read' component={Footer} exact />
+            <Route path='/' component={Content} exact/>
+            <Route path='/add' component={Add} />
+            <Route path='/view' component={View} />
+            <Route path= '/update/:id' component = {Update}></Route>
           </Switch>
 
 
