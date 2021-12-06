@@ -4,6 +4,7 @@ const port = 4000
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 
 app.use(cors());
 app.use(function (req, res, next) {
@@ -13,6 +14,11 @@ app.use(function (req, res, next) {
         "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+///Users/yassinejdair/DataRepProject_Christmas/build
+//config to send files to browser
+app.use(express.static(path.join(__dirname, '../../build')));
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -93,7 +99,7 @@ app.get('/api/songs', (req, res) => {
 
 })
 
-//listens for put request to edit movies
+//listens for put request to edit songs
 app.put('/api/songs/:id', (req, res) => {
     console.log('Updating Song: ' + req.params.id)
 
@@ -147,6 +153,12 @@ app.post('/api/songs', (req, res) => {
     res.send('Item Added');
 
 })
+
+//joins paths when file sends// sends front end
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(__dirname+'../../../build/index.html'));
+    
+    })
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
