@@ -2,8 +2,6 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import { Header } from './components/header';
-import { Footer } from './components/footer';
 import { Content } from './components/content';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -27,7 +25,7 @@ class App extends Component {
           {/* //navigation bar to navigate to different pages */}
           <Navbar bg="dark" variant="dark">
 
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home">TopCharts</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/view">View</Nav.Link>
@@ -43,7 +41,6 @@ class App extends Component {
             <Route path='/view' component={View} />
             <Route path= '/update/:id' component = {Update}></Route>
           </Switch>
-
 
         </div>
       </Router>

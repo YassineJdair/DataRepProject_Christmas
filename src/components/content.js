@@ -8,7 +8,7 @@ export class Content extends React.Component {
         return (
               //div is used in HTML to make divisions of content in the web page
             <div>
-                <h1>Hello World!</h1>
+                <h1>Welcome to TopCharts!</h1>
                 <h2>It is {new Date().toLocaleTimeString()}.</h2>
             </div>
         );

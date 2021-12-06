@@ -52,10 +52,6 @@ export class SongItem extends React.Component {
                     <Button variant="danger" onClick={this.DeleteSong}>Delete Song</Button>
                 </Card>
 
-
-
-
-
             </div>
         );
     }

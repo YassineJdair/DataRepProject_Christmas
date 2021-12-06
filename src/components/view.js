@@ -86,7 +86,7 @@ export class View extends React.Component {
         return (
             //div is used in HTML to make divisions of content in the web page
             <div>
-                <h3>Top Songs</h3>
+                <h3>Top Songs of the Week</h3>
                 {/* jsx */}
                 <Songs songs={this.state.songs} ReloadData={this.ReloadData} ></Songs>
             </div>
