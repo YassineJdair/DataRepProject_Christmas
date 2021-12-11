@@ -111,12 +111,12 @@ app.put('/api/songs/:id', (req, res) => {
 })
 
 //method to delete data// listens for http delete method
-app.delete('/api/songs/:id', (req, res) =>{
+app.delete('/api/songs/:id', (req, res) => {
     console.log("Delete Song: " + req.params.id);
 
-    SongModel.findByIdAndDelete(req.params.id,(err, data) =>{
+    SongModel.findByIdAndDelete(req.params.id, (err, data) => {
         res.send(data);
-        })
+    })
 })
 
 //listen for get request
@@ -155,10 +155,10 @@ app.post('/api/songs', (req, res) => {
 })
 
 //joins paths when file sends// sends front end
-app.get('*', (req, res) =>{
-    res.sendFile(path.join(__dirname+'../../../build/index.html'));
-    
-    })
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../../build/index.html'));
+
+})
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

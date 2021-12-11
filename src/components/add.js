@@ -118,7 +118,7 @@ export class Add extends React.Component {
                             className='form-control'
                             value={this.state.Genre}
                             //onchange attributes fires the moment the value of the element is changed
-                            onChange={this.onChangeGenre}  
+                            onChange={this.onChangeGenre}
                         />
                     </div>
 
