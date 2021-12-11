@@ -11,7 +11,6 @@ import { View } from './components/view';
 import { Update } from './components/update';
 
 //app class that inherits from components
-
 class App extends Component {
   //responsible for describing the view to be rendered to the browser window.
   render() {
@@ -26,23 +25,27 @@ class App extends Component {
           <Navbar bg="dark" variant="dark">
 
             <Navbar.Brand href="#home">TopCharts</Navbar.Brand>
-            <Nav className="me-auto">
+            <Nav className="ml-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/view">View</Nav.Link>
               <Nav.Link href="/add">Add</Nav.Link>
             </Nav>
+            <Nav className="ms-auto">
+              <Nav.Link href=""><h6>{new Date().toLocaleTimeString()}</h6></Nav.Link>
+            </Nav>
           </Navbar>
           <br />
 
-           {/* //switch statment evaluates an expression */}
+          {/* //switch statment evaluates an expression */}
           <Switch>
-            <Route path='/' component={Content} exact/>
+            <Route path='/' component={Content} exact />
             <Route path='/add' component={Add} />
             <Route path='/view' component={View} />
-            <Route path= '/update/:id' component = {Update}></Route>
+            <Route path='/update/:id' component={Update}></Route>
           </Switch>
 
         </div>
+
       </Router>
     );
   }

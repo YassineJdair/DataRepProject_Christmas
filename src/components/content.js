@@ -1,6 +1,8 @@
 //combines two operations
 import React from 'react';
 import { Register } from './register';
+import { Controls } from './controls';
+import img1 from '../images/centralcee.jpeg'
 
 export class Content extends React.Component {
 
@@ -9,12 +11,25 @@ export class Content extends React.Component {
         return (
             //div is used in HTML to make divisions of content in the web page
             <div>
-                <h1>Welcome to TopCharts!</h1>
-                <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                {/* homepage  */}{/* imports register componenets into homepage*/}
+                <object align="top"><h7>Please Register Or Log In</h7><Register /></object>
+
+                <br></br>
                 <br></br>
 
-                <h2>Please Register Or Log In</h2>
-                <Register />
+                <object align="centre"> <h4>Welcome to TopCharts!</h4></object>
+                {/* image for "now playing" */}
+                <br></br>
+
+                <object align="center">
+                    <img src={img1}
+                        width='15%'
+                        height='30%' /></object>
+                <h6><b>Now Playing:</b> 6 for 6</h6>
+                <h6><b>Artist:</b> Central Cee</h6>
+                <h6><b>Album:</b> Wild West</h6>
+                {/* imports control components into homepage */}
+                <Controls />
             </div>
         );
     }

@@ -45,7 +45,7 @@ var songSchema = new Schema({
 
 });
 
-//use the schema to create a new "movie" database model.
+//use the schema to create a new "song" database model.
 var SongModel = mongoose.model("Song", songSchema);
 
 //route point
