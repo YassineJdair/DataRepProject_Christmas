@@ -1,6 +1,16 @@
 //combines two operations
 import React from 'react';
 import axios from 'axios';
+import background from '../images/addimg.jpg'
+
+//image modifications
+const divStyle = {
+    width: '100%',
+    height: '880px',
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover'
+};
+
 
 export class Add extends React.Component {
 
@@ -86,13 +96,14 @@ export class Add extends React.Component {
         //returns some text
         return (
             //div is used in HTML to make divisions of content in the web page //jsx code
-            <div className='App'>
+            <div className='App' className="Content" style={divStyle}>
                 <form onSubmit={this.onSubmit}>
 
                     <div className="form-group">
-                        <label>Add Song Title: </label>
+                        <label><b>Add Song Title: </b></label>
                         {/*input maintains its own state and gets updated based on user input can only be updated by using setState() */}
                         <input type='text'
+                            id='input'
                             className='form-control'
                             value={this.state.Title}
                             //onchange attributes fires the moment the value of the element is changed
@@ -101,7 +112,7 @@ export class Add extends React.Component {
                     </div>
 
                     <div className="form,-group">
-                        <label>Add Song Artist: </label>
+                        <label><b>Add Song Artist: </b></label>
                         {/*input maintains its own state and gets updated based on user input can only be updated by using setState() */}
                         <input type='text'
                             className='form-control'
@@ -112,7 +123,7 @@ export class Add extends React.Component {
                     </div>
 
                     <div className="form,-group">
-                        <label>Add Song Genre: </label>
+                        <label><b>Add Song Genre: </b></label>
                         {/*input maintains its own state and gets updated based on user input can only be updated by using setState() */}
                         <input type='text'
                             className='form-control'
@@ -123,7 +134,7 @@ export class Add extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Add Artist PNG: </label>
+                        <label><b>Add Artist PNG: </b></label>
                         <textarea type='text'
                             className='form-control'
                             value={this.state.Poster}
